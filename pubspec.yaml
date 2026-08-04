@@ -1,0 +1,57 @@
+name: classping
+description: "ClassPing — offline-first weekly class routine reminder app."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^2.6.1
+  go_router: ^14.7.2
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.2
+  shared_preferences: ^2.2.3
+  intl: ^0.19.0
+
+  # Local persistence only — no backend, no internet required, matching
+  # the proposal's "works offline" objective.
+  sqflite: ^2.4.1
+  path: ^1.9.0
+
+  # Local push notifications: weekly-recurring, exact-time, OS-level
+  # scheduling (no server, no FCM).
+  flutter_local_notifications: ^22.0.1
+  timezone: ^0.11.0
+  flutter_timezone: ^3.0.0
+
+  # --- New feature dependencies ---
+  # Backup/export: share the exported JSON file via the OS share sheet.
+  share_plus: ^10.1.4
+  path_provider: ^2.1.5
+  # CSV routine import: let the user pick a .csv file from device storage.
+  file_picker: ^8.1.4
+  csv: ^6.0.0
+  # Optional home-screen widget (Android) showing next class / pending tasks.
+  home_widget: ^0.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon/ClassPing-Icon.png
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/ClassPing-Icon.png"
+  min_sdk_android: 23
